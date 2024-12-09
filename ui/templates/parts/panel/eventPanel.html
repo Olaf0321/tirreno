@@ -1,0 +1,202 @@
+<div class="details-card is-hidden" id="event-card">
+    <header class="card-header">
+        <p class="card-header-title">{{@Details_placeholder}}<button class="delete"></button></p>
+    </header>
+
+    <div class="content is-hidden">
+
+        <div class="subheader">{{ @Details_event_time }}</div>
+        <div id="details_event_time"></div>
+
+        <div class="subheader">{{ @Details_user_id }}</div>
+        <div id="details_user_id"></div>
+
+        <div class="subheader">{{ @Details_accounttitle }}</div>
+        <div id="details_accounttitle"></div>
+
+        <div class="subheader">{{ @Details_reviewed_status }}</div>
+        <div id="details_reviewed_status"></div>
+
+        <div class="subheader">{{ @Details_latest_decision }}</div>
+        <div id="details_latest_decision"></div>
+
+        <div class="subheader">{{ @Details_firstname }}</div>
+        <div id="details_firstname"></div>
+
+        <div class="subheader">{{ @Details_lastname }}</div>
+        <div id="details_lastname"></div>
+
+        <hr />
+
+        <div class="subheader">{{ @Details_score_details }}</div>
+        <div id="details_score_details" class="score-details-content"></div>
+
+        <hr />
+
+        <div class="subheader">{{ @Details_event_type }}</div>
+        <div id="details_event_type_name"></div>
+
+        <div class="subheader">{{ @Details_event_http_method }}</div>
+        <div id="details_event_http_method"></div>
+
+        <div class="subheader">{{ @Details_event_http_code }}</div>
+        <div id="details_event_http_code"></div>
+
+        <div class="subheader">{{ @Details_url }}</div>
+        <div id="details_url"></div>
+
+        <div class="subheader">{{ @Details_query }}</div>
+        <div id="details_query"></div>
+
+        <div class="subheader">{{ @Details_referer }}</div>
+        <div id="details_referer"></div>
+
+        <hr />
+
+        <div class="subheader">{{ @Details_email }}</div>
+        <div id="details_email"></div>
+
+        <div class="subheader">{{ @Details_reputation }}</div>
+        <div id="details_reputation"></div>
+{***
+        <div class="subheader">{{ @Details_no_profiles }}</div>
+        <div id="details_email_profiles"></div>
+***}
+        <div class="subheader">{{ @Details_free_provider }}</div>
+        <div id="details_free_provider"></div>
+
+        <div class="subheader">{{ @Details_no_data_breach }}</div>
+        <div id="details_data_breach"></div>
+
+        <div class="subheader">{{ @Details_data_breaches }}</div>
+        <div id="details_data_breaches"></div>
+
+        <div class="subheader">{{ @Details_blockemails }}</div>
+        <div id="details_blockemails"></div>
+
+        <div class="subheader">{{ @Details_email_fraud_detected }}</div>
+        <div id="details_email_fraud_detected"></div>
+{***
+        <!-- TODO: return alert_list back in next release -->
+        <!-- <div class="subheader">{{ @Details_email_alert_list}}</div> -->
+        <!-- <div id="details_email_alert_list"></div> -->
+***}
+        <div class="subheader">{{ @Details_email_earliest_breach }}</div>
+        <div id="details_email_earliest_breach"></div>
+
+        <hr />
+
+        <div class="subheader">{{ @Details_domain }}</div>
+        <div id="details_domain"></div>
+
+        <div class="subheader">{{ @Details_tranco_rank }}</div>
+        <div id="details_tranco_rank"></div>
+
+        <div class="subheader">{{ @Details_domain_return_code }}</div>
+        <div id="details_domain_return_code"></div>
+
+        <div class="subheader">{{ @Details_domain_unavailable }}</div>
+        <div id="details_domain_disabled"></div>
+
+        <div class="subheader">{{ @Details_blockdomain }}</div>
+        <div id="details_blockdomains"></div>
+
+        <div class="subheader">{{ @Details_disposable_domains }}</div>
+        <div id="details_disposable_domains"></div>
+
+        <div class="subheader">{{ @Details_domain_creation_date }}</div>
+        <div id="details_domain_creation_date"></div>
+
+        <div class="subheader">{{ @Details_domain_expiration_date }}</div>
+        <div id="details_domain_expiration_date"></div>
+
+        <hr />
+
+        <div class="subheader">{{ @Details_phone }}</div>
+        <div id="details_phonenumber"></div>
+
+        <div class="subheader">{{ @Details_phone_country }}</div>
+        <div id="details_phone_country"></div>
+
+        <div class="subheader">{{ @Details_carrier_name }}</div>
+        <div id="details_carrier_name"></div>
+
+        <div class="subheader">{{ @Details_phone_type }}</div>
+        <div id="details_phone_type"></div>
+{***
+        <div class="subheader">{{ @Details_no_profiles }}</div>
+        <div id="details_phone_profiles"></div>
+***}
+        <div class="subheader">{{ @Details_user_count}}</div>
+        <div id="details_phone_users"></div>
+
+        <div class="subheader">{{ @Details_phone_invalid }}</div>
+        <div id="details_phone_invalid"></div>
+
+        <div class="subheader">{{ @Details_phone_fraud_detected }}</div>
+        <div id="details_phone_fraud_detected"></div>
+{***
+        <!-- TODO: return alert_list back in next release -->
+        <!-- <div class="subheader">{{ @Details_phone_alert_list}}</div> -->
+        <!-- <div id="details_phone_alert_list"></div> -->
+***}
+        <hr />
+
+{***
+        <div class="subheader">{{ @Details_device_id }}</div>
+        <div id="details_device_id"></div>
+***}
+        <div class="subheader">{{ @Details_device_created }}</div>
+        <div id="details_device_created"></div>
+
+        <div class="subheader">{{ @Details_device }}</div>
+        <span id="details_device"></span><span id="details_os_version"></span>
+
+        <div class="subheader">{{ @Details_browser_name }}</div>
+        <span id="details_browser"></span>
+
+        <div class="subheader">{{ @Details_lang }}</div>
+        <div id="details_lang"></div>
+
+        <div class="subheader">{{ @Details_ua_modified }}</div>
+        <div id="details_ua_modified"></div>
+
+        <div class="subheader">{{ @Details_ua }}</div>
+        <div id="details_ua"></div>
+
+        <hr />
+
+        <div class="subheader">{{ @Details_ip}}</div>
+        <div id="details_ip"></div>
+
+        <div class="subheader">{{ @Details_cidr}}</div>
+        <div id="details_cidr"></div>
+
+        <div class="subheader">{{ @Details_event_count}}</div>
+        <div id="details_ip_events"></div>
+
+        <div class="subheader">{{ @Details_user_count}}</div>
+        <div id="details_ip_users"></div>
+
+        <div class="subheader">{{ @Details_asn}}</div>
+        <div id="details_asn"></div>
+
+        <div class="subheader">{{ @Details_country}}</div>
+        <div id="details_ip_country"></div>
+
+        <div class="subheader">{{ @Details_netname}}</div>
+        <div id="details_netname"></div>
+
+        <div class="subheader">{{ @Details_ip_type}}</div>
+        <div id="details_ip_type"></div>
+
+        <div class="subheader">{{ @Details_ip_spamlist}}</div>
+        <div id="details_ip_spamlist"></div>
+{***
+        <!-- TODO: return alert_list back in next release -->
+        <!-- <div class="subheader">{{ @Details_ip_alert_list}}</div> -->
+        <!-- <div id="details_ip_alert_list"></div> -->
+***}
+    </div>
+    <div class="text-loader is-hidden"></div>
+</div>

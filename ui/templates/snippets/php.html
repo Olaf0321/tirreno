@@ -1,0 +1,92 @@
+{{ htmlspecialchars('<?php') }}
+
+// Set the API key for sending events
+$apiKey = '{{ @apiKey }}'; // API key
+
+// Replace each key value with actual info
+$data = array(
+
+    /////////// Required fields ///////////
+
+    // Unique value that allows identification of a user. Ex: alice54 (string)
+    'userName'        => '',
+
+    // User email (string)
+    'emailAddress'    => '',
+
+    // User IP address (string)
+    'ipAddress'       => '',
+
+    // URL path of visited page (string)
+    'url'             => '',
+
+    // User-agent of user request (string)
+    'userAgent'       => '',
+
+    // Event UTC timestamp ('Y-m-d H:i:s.v' string)
+    'eventTime'       => '',
+
+    /////////// Optional fields ///////////
+
+    // User first name (string)
+    'firstName'       => '',
+
+    // User last name (string)
+    'lastName'        => '',
+
+    // User full name (string)
+    'fullName'        => '',
+
+    // Title of visited page (string)
+    'pageTitle'       => '',
+
+    // User phone number (string)
+    'phoneNumber'     => '',
+
+    // Referer of visited page (string)
+    'httpReferer'     => '',
+
+    // Status code for page visit (string)
+    'httpCode'        => '',
+
+    // User browser language (string)
+    'browserLanguage' => '',
+
+    // Type of user action from event types list (string)
+    'eventType'       => '',
+
+    // Type of HTTP request from list (string)
+    'httpMethod'      => '',
+
+    // User created UTC timestamp ('Y-m-d H:i:s' string)
+    'userCreated'     => ''
+);
+
+// Convert the event data to a query string
+$dataString = http_build_query($data);
+
+// Set up apiKey
+$headers = [
+    'Api-Key: ' . $apiKey,
+    'Content-Type: application/x-www-form-urlencoded',
+];
+
+// Create a curl request to send the event data to the API
+
+$ch = curl_init();
+// CURLOPT_URL value is sensor URL
+curl_setopt_array($ch, array(
+    CURLOPT_URL            => '{{ @apiUrl }}',
+    CURLOPT_POST           => true,
+    CURLOPT_POSTFIELDS     => $dataString,
+    CURLOPT_RETURNTRANSFER => true,
+    CURLOPT_SSL_VERIFYPEER => false,
+    CURLOPT_TIMEOUT_MS     => 1000,
+    CURLOPT_HTTPHEADER     => $headers
+));
+
+// Send the curl request and capture the response
+$response = curl_exec($ch);
+
+// Close the curl request
+curl_close($ch);

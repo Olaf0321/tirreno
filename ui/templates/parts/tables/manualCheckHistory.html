@@ -1,0 +1,22 @@
+<div class="card events-card" data-item-id="manual-check-history">
+    <header class="card-header">
+        <p class="card-header-title">{{ @AdminManualCheck_history_title }}</p>
+    </header>
+
+    <div class="card-table">
+        <div class="content">
+            <table class="table" id="manual-check-history-table">
+                <tbody>
+                    <repeat group="{{ @HISTORY }}" key="{{ @key }}" value="{{ @value }}">
+                        <tr>
+                            <td>{{ @AdminManualCheck_form_types[@value->type] }}</td>
+                            <td>
+                                <include href="templates/parts/forms/manualCheckShortForm.html" />
+                            </td>
+                        </tr>
+                    </repeat>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

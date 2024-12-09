@@ -1,0 +1,36 @@
+<div class="card events-card" data-item-id="profile-form">
+    <form method="POST" action="{{ 'settings' | alias }}">
+        <input type="hidden" name="token" value="{{ @CSRF }}">
+        <input type="hidden" name="cmd" value="changeRetentionPolicy" />
+        <input type="hidden" name="keyId" value="{{ @apiKeyId }}">
+
+        <header class="card-header">
+            <div class="card-header-title">{{ @AdminRetentionPolicy_form_title }}<p class="tooltip-info tooltip" title="{{ @AdminRetentionPolicy_form_title_tooltip }}"><include href="images/icons/information.svg" alt=''/></p>
+            </div>
+        </header>
+
+        <div class="card-content">
+            <div class="content">
+                {{ @AdminRetentionPolicy_form_field_policy_warning }}
+                <div class="field">
+                    <label class="label">{{ @AdminRetentionPolicy_form_field_policy_label }}</label>
+                    <div class="control">
+                        <div class="selector">
+                            <select class="input" name="retention-policy" id="retention-policy">
+                                <option value="0" {{ @retentionPolicy === 0 ? 'selected' : '' }}>No retention policy</option>
+                                <option value="1" {{ @retentionPolicy === 1 ? 'selected' : '' }}>1 week</option>
+                                <option value="3" {{ @retentionPolicy === 3 ? 'selected' : '' }}>3 weeks</option>
+                                <option value="8" {{ @retentionPolicy === 8 ? 'selected' : '' }}>8 weeks</option>
+                                <option value="12" {{ @retentionPolicy === 12 ? 'selected' : '' }}>12 weeks</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="card-footer">
+            <input type="submit" class="button is-primary" value="{{ @AdminRetentionPolicy_form_button_save }}">
+        </footer>
+    </form>
+</div>

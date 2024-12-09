@@ -1,0 +1,36 @@
+<div class="main-graph separate-graph">
+    <check if="false !== strpos(@CURRENT_PATH, 'country')">
+        <true>
+            <include href="templates/parts/forms/filtersForm.html" />
+        </true>
+    </check>
+    <div id="world-map-markers"></div>
+</div>
+<div class="card events-card">
+    <header class="card-header">
+        <div class="card-header-title">
+            {{ @AdminCountries_map_title }}
+            <span>&#8943;</span><p class="tooltip-info tooltip" title="{{ @AdminCountries_map_title_tooltip }}"><include href="images/icons/information.svg" alt=''/>
+            </p>
+        </div>
+    </header>
+
+    <div class="card-table">
+        <div class="content">
+
+            <include href="templates/parts/forms/searchForm.html" />
+            <table class="table" id="countries-table">
+                <thead>
+                    <tr>
+                        <th class="tooltip country-full-name-flag-col" title="{{ @Base_table_column_country_tooltip_countries }}">{{ @Base_table_column_country }}</th>
+                        <th class="tooltip country-code-col" title="{{ @Base_table_column_country_code_tooltip }}">{{ @Base_table_column_country_code }}</th>
+                        <th class="tooltip country-total-counters-col" title="{{ @Base_table_column_total_users_tooltip_countries }}">{{ @Base_table_column_total_users }}</th>
+                        <th class="tooltip country-total-counters-col" title="{{ @Base_table_column_total_actions_tooltip_countries }}">{{ @Base_table_column_total_actions }}</th>
+                        <th class="tooltip country-total-counters-col" title="{{ @Base_table_column_total_ips_tooltip_countries }}">{{ @Base_table_column_total_ips }}</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+
+</div>

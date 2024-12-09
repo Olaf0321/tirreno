@@ -1,0 +1,39 @@
+<check if="@USER.reviewed">
+    <true>
+        {~
+            $fraud = 'null';
+            if(true  === $USER['fraud']) $fraud = 'true';
+            if(false === $USER['fraud']) $fraud = 'false';
+        ~}
+
+        <div class="head-button"
+            id="legit-fraud-buttons-block"
+            data-user-id="{{ @USER['userid'] }}"
+            data-user-fraud="{{ @fraud }}" >
+        </div>
+    </true>
+    <false>
+        <div class="head-button">
+            <button class="button is-warning dark-loader" data-type="reviewed" id="reviewed-button" type="button">{{ @AdminUsers_remove_reviewed_flag }}</button>
+        </div>
+    </false>
+</check>
+
+{~
+    $scoreUpd = '&minus;';
+
+    if ($USER['score_updated_at']) {
+        try {
+            $date = new DateTime($USER['score_updated_at']);
+            $scoreUpd = 'Last updated: '.$date->format('d/m/Y');
+        } catch (Exception $e) {
+            $scoreUpd = '&minus;';
+        }
+    }
+
+    [$score, $cls] = \Utils\Rules::getUserScoreClass($USER['score']);
+~}
+
+<h1 class="title grey-title">
+    <span class="tooltip score {{ @cls }}" data-score="{{ @USER.score }}" title="{{ @scoreUpd }}">{{ @score | raw }}</span>{{ @title }}<include href="templates/parts/forms/riskScoreButtonForm.html" with="accountid={{@USER.accountid}}"/>
+</h1>

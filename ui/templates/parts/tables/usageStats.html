@@ -1,0 +1,22 @@
+<div class="card events-card">
+    <header class="card-header">
+        <div class="card-header-title">{{ @AdminApi_token_management_title }}<p class="tooltip-info tooltip" title="{{ @AdminApi_token_management_title_tooltip }}"><include href="images/icons/information.svg" alt='' /></p>
+        </div>
+    </header>
+
+    <div class="card-table">
+        <div class="content">
+            <table class="table" id="usage-stats-table">
+                <thead>
+                    <tr>
+                        <th class="subscription-plan-col">{{ @AdminApi_token_management_plan_col }}</th>
+                        <th class="subscription-status-col">{{ @AdminApi_token_management_subscription_status_col }}</th>
+                        <th class="subscription-usage-col">{{ @AdminApi_token_management_last_period_usage_col }}</th>
+                        <th class="billing-date-col">{{ @AdminApi_token_management_next_billed_col }}</th>
+                        <th class="tooltip action-button-col" title="Update payment method">{{ @AdminApi_token_management_update_payment_action }}</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,10 @@
+<div class="searchline">
+
+    <form onsubmit="document.getElementById('auto-complete').focus(); return false;">
+        <input type="hidden" name="token" value="{{ @CSRF }}">
+
+        <div class="field">
+            <input class="input" id="auto-complete" name="search" placeholder="{{ @Welcome_global_search_placeholder | raw }}">
+        </div>
+    </form>
+</div>

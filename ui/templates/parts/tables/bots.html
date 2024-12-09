@@ -1,0 +1,40 @@
+<check if="{{ isset(@showChart) && 1 === @showChart }}">
+    <div class="main-graph separate-graph">
+        <check if="'/bot' == @CURRENT_PATH">
+            <true>
+                <include href="templates/parts/forms/filtersForm.html" />
+            </true>
+        </check>
+        <div class="statChart"></div>
+    </div>
+</check>
+
+<div class="card events-card">
+    <header class="card-header">
+        <div class="card-header-title">
+            {{ @AdminBots_table_title }}
+            <span>&#8943;</span><p class="tooltip-info tooltip" title="{{ @AdminBots_table_title_tooltip }}"><include href="images/icons/information.svg" alt=''/>
+            </p>
+        </div>
+    </header>
+
+    <div class="card-table">
+        <div class="content">
+            <check if="'/bot' == @CURRENT_PATH">
+                <true>
+                    <include href="templates/parts/forms/searchForm.html" />
+                </true>
+            </check>
+            <table class="table" id="bots-table">
+                <thead>
+                    <tr>
+                        <th class="tooltip device-id-col" title="{{ @Base_table_column_device_id_tooltip }}">{{ @Base_table_column_device_id }}</th>
+                        <th class="tooltip device-type-col" title="{{ @Base_table_column_device_name_tooltip }}">{{ @Base_table_column_device_name }}</th>
+                        <th class="tooltip ua-part-col" title="{{ @Base_table_column_os_tooltip }}">{{ @Base_table_column_os }}</th>
+                        <th class="tooltip yes-no-col" title="{{ @Base_table_column_modified_tooltip }}">{{ @Base_table_column_modified }}</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>

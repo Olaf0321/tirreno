@@ -1,0 +1,56 @@
+<check if="{{ isset(@showChart) && 1 === @showChart }}">
+    <div class="main-graph separate-graph">
+        <check if="false !== strpos(@CURRENT_PATH, 'id')" >
+            <true>
+                <include href="templates/parts/forms/filtersForm.html" />
+            </true>
+        </check>
+        <div class="statChart"></div>
+    </div>
+</check>
+
+<div class="card events-card">
+    <header class="card-header">
+        <div class="card-header-title">
+            {{ @AdminUsers_table_title }}
+            <span>&#8943;</span><p class="tooltip-info tooltip" title="{{ @AdminUsers_table_title_tooltip }}"><include href="images/icons/information.svg" alt=''/></p>
+        </div>
+    </header>
+
+    <div class="card-table">
+        <div class="content">
+            <check if="false !== strpos(@CURRENT_PATH, 'id')">
+                <true>
+                <include href="templates/parts/forms/searchForm.html" />
+                <div id="rule-selectors" class="settings-page">
+                    <div class="field">
+                        <div class="control">
+                            <div class="selector">
+                                <select class="input" name="version" multiple>
+                                    <option placeholder>{{ @AdminUsers_rules_search_placeholder }}</option>
+                                    <repeat group="{{ @rules }}" value="{{ @record }}">
+                                        <option value="{{ @record['id'] }}">{{ @record['uid'] }}|{{ \Utils\Rules::getRuleClass(@record['value']) }}|{{ @record['name'] }}</option>
+                                    </repeat>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </true>
+            </check>
+            <table class="table" id="users-table">
+                <thead>
+                    <tr>
+                        <th class="tooltip email-risk-score-short-col" title="{{ @Base_table_column_user_risk_score_and_email_tooltip }}">{{ @Base_table_column_user_risk_score_and_email }}</th>
+                        <th class="tooltip userid-col" title="{{ @Base_table_column_userid_tooltip }}">{{ @Base_table_column_userid }}</th>
+                        <th class="tooltip user-firstname-col" title="{{ @Base_table_column_user_firstname_tooltip }}">{{ @Base_table_column_user_firstname }}</th>
+                        <th class="tooltip user-lastname-col" title="{{ @Base_table_column_user_lastname_tooltip }}">{{ @Base_table_column_user_lastname }}</th>
+                        <th class="tooltip date-col" title="{{ @Base_table_column_user_registered_tooltip }}">{{ @Base_table_column_user_registered }}</th>
+                        <th class="tooltip user-total-counters-col" title="{{ @Base_table_column_total_actions_tooltip_users }}">{{ @Base_table_column_total_actions }}</th>
+                        <th class="tooltip user-review-status-col" title="{{ @Base_table_column_reviewed_status_tooltip }}">{{ @Base_table_column_reviewed_status_short }}</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>

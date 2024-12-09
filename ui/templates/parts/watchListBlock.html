@@ -1,0 +1,44 @@
+<check if="@USER.reviewed">
+    <true>
+        {~
+            $fraud = 'null';
+            if(true  === $USER['fraud']) $fraud = 'true';
+            if(false === $USER['fraud']) $fraud = 'false';
+        ~}
+
+        <div class="head-button"
+            id="legit-fraud-buttons-block"
+            data-user-id="{{ @USER['userid'] }}"
+            data-user-fraud="{{ @fraud }}" >
+        </div>
+    </true>
+    <false>
+        <div class="head-button">
+            <button class="button is-warning" data-type="reviewed" id="reviewed-button" type="button">{{ @AdminUsers_remove_reviewed_flag }}</button>
+        </div>
+    </false>
+</check>
+
+<check if="@USER.is_important">
+    <true>
+        {~
+            $title = "<span class='importantUser'>$title</span>";
+        ~}
+        <div class="head-button is-hidden">
+            <button class="button is-warning" data-type="remove" id="watchlist-button" type="button">{{ @AdminUsers_remove_from_watchlist }}</button>
+        </div>
+    </true>
+    <false>
+        <div class="head-button is-hidden">
+            <button class="button is-warning" data-type="add" id="watchlist-button" type="button">{{ @AdminUsers_add_to_watchlist }}</button>
+        </div>
+    </false>
+</check>
+
+{~
+    [$score, $cls] = \Utils\Rules::getUserScoreClass($USER['score']);
+~}
+
+<h1 class="title">
+    <span class="score {{ @cls }}" data-score="{{ @USER.score }}">{{ @score | raw }}</span>{{ @title }}
+</h1>

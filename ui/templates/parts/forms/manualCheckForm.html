@@ -1,0 +1,75 @@
+<div class="card events-card" data-item-id="manual-check-form">
+    <form method="POST" action="{{ 'manualCheck' | alias }}">
+        <input type="hidden" name="token" value="{{ @CSRF }}">
+
+        <header class="card-header">
+            <p class="card-header-title">{{ @AdminManualCheck_form_title }}</p>
+        </header>
+
+        <div class="card-content">
+            <div class="content">
+                <table class="search-form">
+                    <tr>
+                        <td>
+                            <div class="field" >
+                                <set TYPE="{{ isset(@SEARCH_VALUES) ? @SEARCH_VALUES.type : '' }}" />
+                                <div class="selector">
+                                    <select class="input" name="type" id="type">
+                                        <repeat group="{{ @AdminManualCheck_form_types }}" key="{{ @key }}" value="{{ @type }}">
+                                            <set active="{{ @TYPE === @key }} " />
+                                            <option value="{{ @key }}" {{ @active ? 'selected' : '' }}>{{ @type }}</option>
+                                        </repeat>
+                                    </select>
+                                </div>
+                                </label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="field">
+                                <set SEARCH="{{ isset(@SEARCH_VALUES) ? @SEARCH_VALUES.search : '' }}" />
+                                <input class="input" name="search" type="text" value="{{ @SEARCH }}" />
+                                </label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="field">
+                                <input type="submit" class="button is-primary" value="{{ @AdminManualCheck_form_button_search }}">
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+{**
+        <div class="card-content">
+            <div class="content">
+                <div class="field">
+                    <label class="label">{{ @AdminManualCheck_form_field_type_label }}</label>
+                    <div class="control">
+                        <set TYPE="{{ isset(@SEARCH_VALUES) ? @SEARCH_VALUES.type : '' }}" />
+                        <select class="input" name="type" id="type">
+                            <repeat group="{{ @AdminManualCheck_form_types }}" key="{{ @key }}" value="{{ @type }}">
+                                <set active="{{ @TYPE === @key }} " />
+                                <option value="{{ @key }}" {{ @active ? 'selected' : '' }}>{{ @type }}</option>
+                            </repeat>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">{{ @AdminManualCheck_form_field_search_query_label }}</label>
+                    <div class="control">
+                        <set SEARCH="{{ isset(@SEARCH_VALUES) ? @SEARCH_VALUES.search : '' }}" />
+                        <input class="input" name="search" type="text" value="{{ @SEARCH }}" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="card-footer">
+            <input type="submit" class="button is-primary" value="{{ @AdminManualCheck_form_button_search }}">
+        </footer>
+**}
+    </form>
+</div>

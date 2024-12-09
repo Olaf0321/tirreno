@@ -1,0 +1,37 @@
+{
+    "config": {
+        "platform": {
+            "php": "8"
+        },
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    },
+    "require": {
+        "php": ">=7.2.5",
+        "bcosca/fatfree-core": "3.8.2",
+        "phpmailer/phpmailer": "6.9.1",
+        "ruler/ruler": "0.4.0",
+        "matomo/device-detector": "^6.4.1"
+    },
+    "extra": {
+        "paas": {
+            "document-root": "/",
+            "index-document": "index.php",
+            "nginx-includes": ["nginx.conf"]
+        }
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "3.10.3",
+        "phpstan/phpstan": "^2.0"
+    },
+    "scripts": {
+        "compile": [
+            "chmod 755 tmp",
+            "chmod 755 logs",
+            "chmod 640 composer.json",
+            "chmod 640 composer.lock",
+            "chmod -R 750 config"
+        ]
+    }
+}

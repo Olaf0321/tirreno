@@ -1,0 +1,50 @@
+<div class="details-card is-hidden" id="phone-card">
+    <header class="card-header">
+        <div class="card-header-title">
+            {{ @Phone_details_placeholder }}<button class="reenrichment-button is-hidden" type="submit" disabled>
+                <p class="tooltip" title="{{ @Base_page_enrich_entity }}"><img src="/ui/images/icons/reload.svg"></p></button><button class="delete"></button>
+        </div>
+    </header>
+
+    <div class="content is-hidden">
+
+        <div class="subheader">{{ @Details_phone }}</div>
+        <div id="details_phone_number"></div>
+
+        <div class="subheader">{{ @Details_phone_invalid }}</div>
+        <div id="details_invalid"></div>
+
+        <div class="subheader">{{ @Details_phone_country }}</div>
+        <div id="details_country"></div>
+
+        <div class="subheader">{{ @Details_carrier_name }}</div>
+        <div id="details_carrier_name"></div>
+
+        <div class="subheader">{{ @Details_phone_type }}</div>
+        <div id="details_type"></div>
+
+        <div class="subheader">{{ @Details_user_count}}</div>
+        <div id="details_shared"></div>
+
+        <div class="subheader">{{ @Details_phone_fraud_detected }}</div>
+        <div id="details_fraud_detected"></div>
+
+        <div class="subheader">{{ @Details_phone_national }}</div>
+        <div id="details_phone_national"></div>
+{***
+        <div class="subheader">{{ @Details_no_profiles }}</div>
+        <div id="details_profiles"></div>
+***}
+{***
+        <!-- TODO: return alert_list back in next release -->
+        <!-- <div class="subheader">{{ @Details_phone_alert_list}}</div> -->
+        <!-- <div id="details_alert_list"></div> -->
+***}
+        <hr />
+
+        <div class="subheader">{{ @Details_shared_users }}</div>
+        <div id="details_shared_users"></div>
+
+    </div>
+    <div class="text-loader is-hidden"></div>
+</div>

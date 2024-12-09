@@ -1,0 +1,80 @@
+<div class="details-card is-hidden" id="email-card">
+    <header class="card-header">
+        <div class="card-header-title">
+            {{ @Email_details_placeholder }}<button class="reenrichment-button is-hidden" type="submit" disabled>
+                <p class="tooltip" title="{{ @Base_page_enrich_entity }}"><img src="/ui/images/icons/reload.svg"></p>
+            </button><button class="delete"></button>
+        </div>
+    </header>
+
+    <div class="content is-hidden">
+
+        <div class="subheader">{{ @Details_email }}</div>
+        <div id="details_email"></div>
+
+        <div class="subheader">{{ @Details_reputation }}</div>
+        <div id="details_reputation"></div>
+
+        <div class="subheader">{{ @Details_free_provider }}</div>
+        <div id="details_free_email_provider"></div>
+{***
+        <div class="subheader">{{ @Details_no_profiles }}</div>
+        <div id="details_profiles"></div>
+***}
+        <div class="subheader">{{ @Details_no_data_breach }}</div>
+        <div id="details_data_breach"></div>
+
+        <div class="subheader">{{ @Details_data_breaches }}</div>
+        <div id="details_data_breaches"></div>
+
+        <div class="subheader">{{ @Details_disposable_domains }}</div>
+        <div id="details_disposable_domains"></div>
+
+        <div class="subheader">{{ @Details_blockemails }}</div>
+        <div id="details_blockemails"></div>
+
+        <div class="subheader">{{ @Details_email_fraud_detected }}</div>
+        <div id="details_fraud_detected"></div>
+
+        <div class="subheader">{{ @Details_domain_contact_email }}</div>
+        <div id="details_domain_contact_email"></div>
+
+        <div class="subheader">{{ @Details_earliest_breach }}</div>
+        <div id="details_earliest_breach"></div>
+{***
+        <!-- TODO: return alert_list back in next release -->
+        <!-- <div class="subheader">{{ @Details_email_alert_list}}</div> -->
+        <!-- <div id="details_alert_list"></div> -->
+***}
+        <hr />
+
+        <div class="subheader">{{ @Details_domain }}</div>
+        <div id="details_domain"></div>
+
+        <div class="subheader">{{ @Details_tranco_rank }}</div>
+        <div id="details_tranco_rank"></div>
+
+        <div class="subheader">{{ @Details_domain_unavailable }}</div>
+        <div id="details_disabled"></div>
+
+        <div class="subheader">{{ @Details_mx_record }}</div>
+        <div id="details_mx_record"></div>
+
+        <div class="subheader">{{ @Details_domain_return_code }}</div>
+        <div id="details_return_code"></div>
+
+        <div class="subheader">{{ @Details_blockdomain }}</div>
+        <div id="details_blockdomains"></div>
+
+        <div class="subheader">{{ @Details_closest_snapshot }}</div>
+        <div id="details_closest_snapshot"></div>
+
+        <div class="subheader">{{ @Details_domain_creation_date }}</div>
+        <div id="details_creation_date"></div>
+
+        <div class="subheader">{{ @Details_domain_expiration_date }}</div>
+        <div id="details_expiration_date"></div>
+
+    </div>
+    <div class="text-loader is-hidden"></div>
+</div>

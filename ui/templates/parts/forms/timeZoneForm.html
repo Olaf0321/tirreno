@@ -1,0 +1,28 @@
+<div class="card events-card" data-item-id="profile-form">
+    <form method="POST" action="/settings">
+        <input type="hidden" name="token" value="{{ @CSRF }}">
+        <input type="hidden" name="cmd" value="changeTimeZone" />
+
+        <header class="card-header">
+            <div class="card-header-title">{{ @AdminTimeZone_form_title }}<p class="tooltip-info tooltip" title="{{ @AdminTimeZone_form_title_tooltip }}"><include href="images/icons/information.svg" alt=''/></p>
+            </div>
+        </header>
+
+        <div class="card-content">
+            <div class="content">
+                <div class="field">
+                    <label class="label">{{ @AdminTimeZone_form_field_timezone_label }}</label>
+                    <div class="control">
+                        <set TIMEZONE="{{ @PROFILE ? @PROFILE.timezone: 'UTC' }}" />
+                        <set TIMEZONE="{{ isset(@TIME_ZONE_VALUES) ? @TIME_ZONE_VALUES.timezone : @TIMEZONE }}" />
+                        <include href="templates/parts/timeZoneSelector.html" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="card-footer">
+            <input type="submit" class="button is-primary" value="{{ @AdminTimeZone_form_button_save }}">
+        </footer>
+    </form>
+</div>

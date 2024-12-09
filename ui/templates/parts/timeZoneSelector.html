@@ -1,0 +1,8 @@
+<div class="selector">
+    <select class="input" name="timezone" id="timezone">
+        <repeat group="{{ @timezones }}" key="{{ @key }}" value="{{ @timezone }}">
+            <set active="{{ @TIMEZONE === @key }} " />
+            <option value="{{ @key }}" {{ @active ? 'selected' : '' }}>{{ @timezone }}</option>
+        </repeat>
+    </select>
+</div>

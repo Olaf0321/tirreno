@@ -1,0 +1,22 @@
+<div class="card events-card" data-item-id="check-updates-form">
+    <form method="POST" action="/settings">
+        <input type="hidden" name="token" value="{{ @CSRF }}">
+        <input type="hidden" name="cmd" value="checkUpdates" />
+
+        <div class="card-header">
+            <div class="card-header-title">{{ @AdminSettings_checkUpdates_form_title }}</div>
+        </div>
+
+        <div class="card-content">
+            <div class="content">
+                <div class="field">
+                    <p>{{ @AdminSettings_form_checkUpdates_confirmationMessage | raw }}</p>
+                </div>
+            </div>
+        </div>
+
+        <footer class="card-footer">
+            <input type="submit" class="button is-primary" value="{{ @AdminSettings_checkUpdates_form_button }}" >
+        </footer>
+    </form>
+</div>

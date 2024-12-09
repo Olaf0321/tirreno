@@ -1,0 +1,20 @@
+<table class="table" id="token-table">
+    <thead>
+        <tr>
+            <th>{{ @AdminApi_table_column_sensor_key }}</th>
+            <th>{{ @AdminApi_table_column_created_at }}</th>
+            <th class="tooltip action-button-col" title="{{ @AdminApi_table_column_action_tooltip }}">{{ @AdminApi_table_column_action }}</th>
+        </tr>
+    </thead>
+    <tbody>
+        <repeat group="{{ @API_KEYS }}" value="{{ @API_KEY }}">
+            <tr>
+                <td><code>{{ @API_KEY.key }}</code></td>
+                <td>{{ \Utils\ElapsedDate::short(@API_KEY.created_at) }}</td>
+                <td>
+                    <include href="templates/parts/forms/resetKeyForm.html" with="id={{@API_KEY.id}}, isOwner={{@IS_OWNER}}" />
+                </td>
+            </tr>
+        </repeat>
+    </tbody>
+</table>

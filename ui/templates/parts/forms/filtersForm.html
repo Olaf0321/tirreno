@@ -1,0 +1,61 @@
+<nav class="filtersForm daterange">
+    {~
+
+        $USE_RANGE    = false;
+        $USE_INTERVAL = false;
+
+        if('/event' == $CURRENT_PATH) {
+            $USE_RANGE = true;
+        } else {
+            $USE_INTERVAL = true;
+        }
+
+        if('/watchlist' == $CURRENT_PATH) {
+            $USE_RANGE    = false;
+            $USE_INTERVAL = false;
+        }
+    ~}
+
+    <check if="{{ @USE_INTERVAL }}">
+
+            <div class="control has-icons-left">
+                <span class="dateselector">
+                    <a href="javascript:void(0);" data-type="d" data-value="1">1D</a>
+                    <a href="javascript:void(0);" data-type="d" data-value="3">3D</a>
+                    <a href="javascript:void(0);" data-type="d" data-value="7" class="active">1W</a>
+                    <a href="javascript:void(0);" data-type="d" data-value="14">2W</a>
+                    <a href="javascript:void(0);" data-type="d" data-value="30">1M</a>
+                    <a href="javascript:void(0);" data-type="d" data-value="90">3M</a>
+                    <a href="javascript:void(0);" data-type="d" data-value="0">MAX</a>
+                </span>
+
+                <span class="icon">
+                    <include href="images/icons/stopwatch.svg" />
+                </span>
+
+                <input type="hidden" name="date_from" />
+                <input type="hidden" name="date_to" />
+            </div>
+
+    </check>
+
+    <check if="{{ @USE_RANGE }}">
+        <div class="field">
+            <p class="control has-icons-left">
+                <input type="datetime-local" class="input" name="date_from" step="1">
+                <span class="icon">
+                    <include href="images/icons/calendar.svg" />
+                </span>
+            </p>
+        </div>
+
+        <div class="field">
+            <p class="control has-icons-left">
+                <input type="datetime-local" class="input" name="date_to" step="1">
+                <span class="icon">
+                    <include href="images/icons/calendar.svg" />
+                </span>
+            </p>
+        </div>
+    </check>
+</nav>

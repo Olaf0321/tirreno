@@ -1,0 +1,9 @@
+<form action="" method="POST" class="reenrichment" id="reenrichment-form">
+    <input type="hidden" name="token" value="{{ @CSRF }}">
+    <input type="hidden" name="type" value="{{@type}}" />
+    <input type="hidden" name="entityId" value="{{@entityId}}" />
+    <input type="hidden" name="cmd" value="reenrichment" />
+    <button class="reenrichment-button" type="submit">
+        <p class="tooltip" title="{{ @Base_page_enrich_entity }}"><img src="/ui/images/icons/reload.svg"></p>
+    </button>
+</form>

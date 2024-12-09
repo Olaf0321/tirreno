@@ -1,0 +1,28 @@
+
+<form action="" method="POST">
+    <input type="hidden" name="token" value="{{ @CSRF }}">
+
+    <div class="field">
+        <label for="new-password" class="label">{{ @PasswordRecovering_form_newPassword_label }}</label>
+        <div class="control">
+            <input class="input" type="password" id="new-password" name="new-password" required minlength="{{ @MIN_PASSWORD_LENGTH }}">
+        </div>
+    </div>
+    <div class="field">
+        <label for="password-confirmation" class="label">{{ @PasswordRecovering_form_confirmPassword_label }}</label>
+        <div class="control">
+            <input class="input" type="password" id="password-confirmation" name="password-confirmation" required minlength="{{ @MIN_PASSWORD_LENGTH }}">
+        </div>
+    </div>
+
+    <hr />
+
+    <div class="bottom-line">
+        <div>
+            <a href="/login">{{ @ForgotPassword_form_login_link }}</a>
+        </div>
+        <div class="control">
+            <button class="button is-primary" type="submit">{{ @PasswordRecovering_form_renew_button }}</button>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,31 @@
+<div class="card events-card" data-item-id="profile-form">
+    <form method="POST" action="/settings">
+        <input type="hidden" name="token" value="{{ @CSRF }}">
+        <input type="hidden" name="cmd" value="changeEmail" />
+
+        <header class="card-header">
+            <div class="card-header-title">{{ @AdminSettings_changeEmail_form_title }}<p class="tooltip-info tooltip" title="{{ @AdminSettings_changeEmail_form_title_tooltip }}"><include href="images/icons/information.svg" alt=''/></p>
+            </div>
+        </header>
+
+        <div class="card-content">
+            <div class="content">
+                <check if="{{ @waitingForConfirmation }}">
+                    <div class="warning-text">
+                        {{ \sprintf(@AdminSettings_changeEmail_approval_pending, @waitingForConfirmation) }}
+                    </div>
+                </check>
+                <div class="field">
+                    <label class="label">{{ @AdminSettings_changeEmail_form_field_email_label }}</label>
+                    <div class="control">
+                        <input class="input" name="email" type="email" value="{{ @email }}" placeholder="{{ @AdminSettings_changeEmail_form_field_email_placeholder }}" required />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="card-footer">
+            <input type="submit" class="button is-primary" value="{{ @AdminSettings_changeEmail_form_button_save }}" >
+        </footer>
+    </form>
+</div>

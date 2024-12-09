@@ -1,0 +1,37 @@
+<div class="card events-card">
+    <header class="card-header">
+        <div class="card-header-title">{{ @AdminApi_shared_keys_title }}<p class="tooltip-info tooltip" title="{{ @AdminApi_shared_keys_title_tooltip }}"><include href="images/icons/information.svg" alt='' /></p>
+        </div>
+    </header>
+
+    <div class="card-table">
+        <div class="content">
+            <table class="table" id="shared-operators-table">
+                <tbody>
+                    <check if="{{ count(@SHARED_OPERATORS) > 0 }}">
+                        <true>
+                            <repeat group="{{ @SHARED_OPERATORS }}" value="{{ @operator }}">
+                                <tr>
+                                    <td>{{ @operator.email }}</td>
+                                    <td>{{ @operator.is_active ? 'Active' : 'Inactive' }}</td>
+                                    <td>
+                                        <include href="templates/parts/forms/removeCoOwnerForm.html" with="id={{@operator.id}}"/>
+                                    </td>
+                                </tr>
+                            </repeat>
+                        </true>
+                        <false>
+                            <tr>
+                                <td colspan="2">{{ @AdminApi_shared_keys_empty }}</td>
+                            </tr>
+                        </false>
+                    </check>
+
+                    <tr>
+                        <include href="templates/parts/forms/addCoOwnerForm.html" />
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

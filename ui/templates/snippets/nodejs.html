@@ -1,0 +1,69 @@
+const axios = require('axios');
+const qs = require('qs');       // You might need to install 'qs'
+
+const url = '{{ @apiUrl }}';      // sensor URL
+const headers = {
+    'Content-Type': 'application/x-www-form-urlencoded',
+    'Api-Key': '{{ @apiKey }}' // API key
+};
+
+// Replace each key value with actual info
+const data = {
+    
+    /////////// Required fields ///////////
+
+    // Unique value that allows identification of a user. Ex: alice54 (string)
+    userName: '',
+
+    // User email (string)
+    emailAddress: '',
+
+    // User IP address (string)
+    ipAddress: '',
+
+    // URL path of visited page (string)
+    url: '',
+
+    // User-agent of user request (string)
+    userAgent: '',
+
+    // Event UTC timestamp ('Y-m-d H:i:s.v' string)
+    eventTime: '',
+
+    /////////// Optional fields ///////////
+
+    // User first name (string)
+    firstName: '',
+
+    // User last name (string)
+    lastName: '',
+
+    // User full name (string)
+    fullName: '',
+
+    // Title of visited page (string)
+    pageTitle: '',
+
+    // User phone number (string)
+    phoneNumber: '',
+
+    // Referer of visited page (string)
+    httpReferer: '',
+
+    // Status code for page visit (string)
+    httpCode: '',
+
+    // User browser language (string)
+    browserLanguage: '',
+
+    // Type of user action from event types list (string)
+    eventType: '',
+
+    // Type of HTTP request from list (string)
+    httpMethod: '',
+
+    // User created UTC timestamp ('Y-m-d H:i:s' string)
+    userCreated: ''
+};
+
+axios.post(url, qs.stringify(data), { headers: headers });

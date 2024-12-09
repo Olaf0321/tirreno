@@ -1,0 +1,27 @@
+<form method="POST" action="/api">
+    <input type="hidden" name="token" value="{{ @CSRF }}">
+    <input type="hidden" name="cmd" value="updateApiUsage">
+    <input type="hidden" name="keyId" value="{{ @API_KEY.id }}">
+
+    <div class="card-content">
+        <div class="content">
+            <div class="field"><p>{{ @AdminApi_form_confirmationMessage | raw }}</p></div>
+            <textarea class="textarea" name="apiToken" placeholder="{{ @AdminApi_form_field_token_placeholder }}" rows="2" cols="84" required>{{ @API_KEY.apiToken }}</textarea>
+
+            <repeat group="{{ @API_KEY.enrichedAttributes }}" key="{{ @attribute }}"
+                value="{{ @enabled }}">
+                <div class="field">
+                    <label class="label">{{ @AdminApi_data_enrichment_attributes[@attribute]
+                        }}</label>
+                    <div class="control">
+                        <input type="checkbox" name="enrichedAttributes[{{ @attribute }}]"
+                            value="{{ @attribute }}" {{ @enabled ? 'checked' : '' }} />
+                    </div>
+                </div>
+            </repeat>
+        </div>
+    </div>
+    <footer class="card-footer">
+        <input type="submit" class="button is-primary" value="{{ @AdminApi_form_button_save }}" >
+    </footer>
+</form>

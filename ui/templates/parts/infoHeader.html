@@ -1,0 +1,43 @@
+<check if="isset(@lastseen) && !empty(@lastseen)">
+<div class="lastseen is-hidden">{{ @lastseen }}</div>
+</check>
+
+<div class="headline">
+    <check if="isset(@isUserPage)">
+        <true>
+            <include href="templates/parts/userBlock.html" with="title={{@title}}"/>
+        </true>
+        <false>
+            <check if="isset(@country) && !empty(@country)">
+                <true>
+                    {~
+                        $ICON_PATH = in_array($country['id'], [null, 'N/A', 'AN', 'CS', 'YU']) ? 'icons/null.svg' : 'flags/'.strtolower($country['id']).'.svg';
+                    ~}
+                    <check if="{{ isset(@type) && isset(@id) && isset(@dataIncomplete) && @dataIncomplete }}">
+                        <true>
+                            <h1 class="title grey-title"><img src="/ui/images/{{ @ICON_PATH }}" class="country-flag" alt="{{@country.id}}">{{ @title }}<include href="templates/parts/forms/enrichmentButtonForm.html" with="type={{@type}}, entityId={{@id}}"/></h1>
+                        </true>
+                        <false>
+                            <h1 class="title grey-title"><img src="/ui/images/{{ @ICON_PATH }}" class="country-flag" alt="{{@country.id}}">{{ @title }}</h1>
+                        </false>
+                    </check>
+                </true>
+                <false>
+                    <check if="{{ isset(@type) && isset(@id) && isset(@dataIncomplete) && @dataIncomplete }}">
+                        <true>
+                            <h1 class="title grey-title">{{ @title }}<include href="templates/parts/forms/enrichmentButtonForm.html" with="type={{@type}}, entityId={{@id}}"/></h1>
+                        </true>
+                        <false>
+                            <h1 class="title grey-title">{{ @title }}</h1>
+                        </false>
+                    </check>
+                </false>
+            </check>
+        </false>
+    </check>
+
+    <check if="isset(@subtitle) && !empty(@subtitle)">
+        <div class="subtitle">{{ @subtitle }}</div>
+    </check>
+</div>
+

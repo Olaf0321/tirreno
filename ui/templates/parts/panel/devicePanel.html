@@ -1,0 +1,30 @@
+<div class="details-card is-hidden" id="device-card">
+    <header class="card-header">
+        <div class="card-header-title">
+            {{ @Device_details_placeholder }}<button class="reenrichment-button is-hidden" type="submit" disabled>
+                <p class="tooltip" title="{{ @Base_page_enrich_entity }}"><img src="/ui/images/icons/reload.svg"></p>
+            </button><button class="delete"></button>
+        </div>
+    </header>
+        
+    <div class="content is-hidden">
+        <div class="subheader">{{ @Details_device_created }}</div>
+        <div id="details_device_created"></div>
+
+        <div class="subheader">{{ @Details_device }}</div>
+        <span id="details_device"></span> <span id="details_os_version"></span>
+
+        <div class="subheader">{{ @Details_browser_name }}</div>
+        <span id="details_browser"></span>
+
+        <div class="subheader">{{ @Details_lang }}</div> 
+        <div id="details_lang"></div>
+
+        <div class="subheader">{{ @Details_ua_modified }}</div>
+        <div id="details_ua_modified"></div>
+
+        <div class="subheader">{{ @Details_ua }}</div>
+        <div id="details_ua"></div>
+    </div>        
+    <div class="text-loader is-hidden"></div>
+</div>

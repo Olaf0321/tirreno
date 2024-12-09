@@ -1,0 +1,66 @@
+<table class="table-tile content info-tiles" id="dashboard-counters">
+    <tr>
+        <td class="table-card tile-padding totalEvents">
+            <div class="subtitle">
+                {{ @AdminHome_total_events }}<p class="tooltip-info tooltip" title="{{ @AdminHome_total_events_tooltip }}"><include href="images/icons/information.svg" alt=''/>
+                </p>
+            </div>
+            <p class="title"></p>
+            <a href="/event">{{ @AdminHome_view_all }}</a>
+        </td>
+
+        <td class="table-card tile-padding totalUsers">
+            <div class="subtitle">
+                {{ @AdminHome_total_users }}<p class="tooltip-info tooltip" title="{{ @AdminHome_total_users_tooltip }}"><include href="images/icons/information.svg" alt=''/>
+                </p>
+            </div>
+            <p class="title"></p>
+            <a href="/id">{{ @AdminHome_view_all }}</a>
+        </td>
+
+        <td class="table-card tile-padding totalIps">
+            <div class="subtitle">
+                {{ @AdminHome_total_ips }}<p class="tooltip-info tooltip" title="{{ @AdminHome_total_ips_tooltip }}"><include href="images/icons/information.svg" alt=''/>
+                </p>
+            </div>
+            <p class="title"></p>
+            <a href="/ip">{{ @AdminHome_view_all }}</a>
+        </td>
+
+        <td class="table-card tile-padding totalCountries">
+            <div class="subtitle">
+                {{ @AdminHome_total_countries }}<p class="tooltip-info tooltip" title="{{ @AdminHome_total_countries_tooltip }}"><include href="images/icons/information.svg" alt=''/>
+                </p>
+            </div>
+            <p class="title"></p>
+            <a href="/country">{{ @AdminHome_view_all }}</a>
+        </td>
+
+        <td class="table-card tile-padding totalUrls">
+            <div class="subtitle">
+                {{ @AdminHome_total_urls }}<p class="tooltip-info tooltip" title="{{ @AdminHome_total_urls_tooltip }}"><include href="images/icons/information.svg" alt=''/>
+                </p>
+            </div>
+            <p class="title"></p>
+            <a href="/resource">{{ @AdminHome_view_all }}</a>
+        </td>
+
+        <td class="table-card tile-padding totalUsersForReview">
+            <div class="subtitle">
+                {{ @AdminHome_total_users_for_review }}<p class="tooltip-info tooltip" title="{{ @AdminHome_total_users_for_review_tooltip }}"><include href="images/icons/information.svg" alt=''/>
+                </p>
+            </div>
+            <p class="title"></p>
+            <a href="/review-queue">{{ @AdminHome_view_all }}</a>
+        </td>
+
+        <td class="table-card tile-padding totalBlockedUsers">
+            <div class="subtitle">
+                {{ @AdminHome_total_blocked_users }}<p class="tooltip-info tooltip" title="{{ @AdminHome_total_blocked_users_tooltip }}"><include href="images/icons/information.svg" alt=''/>
+                </p>
+            </div>
+            <p class="title"></p>
+            <a href="/blacklist">{{ @AdminHome_view_all }}</a>
+        </td>
+    </tr>
+</table>

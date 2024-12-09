@@ -1,0 +1,34 @@
+<form action="/signup" method="POST">
+    <input type="hidden" name="token" value="{{ @CSRF }}">
+
+    <div class="field">
+        <div class="control">
+            <input autofocus placeholder="{{ @Signup_form_email_label }}" class="input" type="email" id="email" name="email" required value="{{ isset(@VALUES)?@VALUES.email:'' }}" >
+        </div>
+    </div>
+
+    <div class="field">
+        <div class="control">
+            <input class="input" placeholder="{{ @Signup_form_password_label }}" type="password" id="password" name="password" minlength="{{ @MIN_PASSWORD_LENGTH }}" required>
+        </div>
+    </div>
+
+    <div class="field">
+        <div class="control">
+            <set TIMEZONE="UTC" />
+            <include href="templates/parts/timeZoneSelector.html" />
+        </div>
+    </div>
+
+    <hr />
+
+    <div class="bottom-line">
+        <div>
+            <a href="/login">{{ @ForgotPassword_form_login_link }}</a>
+        </div>
+
+        <div class="control has-text-right">
+            <button class="button is-primary" type="submit">{{ @Signup_form_signin_button }}</button>
+        </div>
+    </div>
+</form>

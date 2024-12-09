@@ -1,0 +1,43 @@
+<check if="{{ isset(@showChart) && 1 === @showChart }}">
+    <div class="main-graph separate-graph">
+        <check if="false !== strpos(@CURRENT_PATH, 'resource')">
+            <true>
+                <include href="templates/parts/forms/filtersForm.html" />
+            </true>
+        </check>
+        <div class="statChart"></div>
+    </div>
+</check>
+
+<div class="card events-card">
+
+    <header class="card-header">
+        <div class="card-header-title">
+            {{ @AdminResources_table_title }}
+            <span>&#8943;</span><p class="tooltip-info tooltip" title="{{ @AdminResources_table_title_tooltip }}"><include href="images/icons/information.svg" alt=''/></p>
+        </div>
+    </header>
+
+    <div class="card-table">
+        <div class="content">
+            <check if="false !== strpos(@CURRENT_PATH, 'resource')">
+                <true>
+                <include href="templates/parts/forms/searchForm.html" />
+                </true>
+            </check>
+            <table class="table" id="resources-table">
+                <thead>
+                    <tr>
+                        <th class="tooltip url-col" title="{{ @Base_table_column_url_tooltip }}">{{ @Base_table_column_url }}</th>
+                        <th class="tooltip http-response-code-col" title="{{ @Base_table_column_code_tooltip }}">{{ @Base_table_column_code }}</th>
+                        <th class="tooltip resources-total-counters-col" title="{{ @Base_table_column_total_users_tooltip_resources }}">{{ @Base_table_column_total_users }}</th>
+                        <th class="tooltip resources-total-counters-col" title="{{ @Base_table_column_total_countries_tooltip_resources }}">{{ @Base_table_column_total_countries }}</th>
+                        <th class="tooltip resources-total-counters-col" title="{{ @Base_table_column_total_ips_tooltip_resources }}">{{ @Base_table_column_total_ips }}</th>
+                        <th class="tooltip resources-total-counters-col" title="{{ @Base_table_column_total_actions_tooltip_resources }}">{{ @Base_table_column_total_actions }}</th>
+                        <th class="tooltip yes-no-col" title="{{ @Base_table_column_suspicious_url_tooltip_resources }}">{{ @Base_table_column_suspicious_url }}</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>

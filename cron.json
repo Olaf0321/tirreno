@@ -1,0 +1,7 @@
+{
+  "jobs": [
+    {
+      "command": "*/10 * * * * php index.php /cron"
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+<check if="{{ isset(@showChart) && 1 === @showChart }}">
+    <div class="main-graph separate-graph">
+        <check if="false !== strpos(@CURRENT_PATH, 'domain')">
+            <true>
+                <include href="templates/parts/forms/filtersForm.html" />
+            </true>
+        </check>
+        <div class="statChart"></div>
+    </div>
+</check>
+
+<div class="card events-card">
+    <header class="card-header">
+        <div class="card-header-title">
+            <check if="{{ isset(@innerDomains) && 1 === @innerDomains }}">
+                <true>
+                    {{ @AdminDomains_table_same_ip }}
+                    <span>&#8943;</span><p class="tooltip-info tooltip" title="{{ @AdminDomains_table_same_ip_tooltip }}"><include href="images/icons/information.svg" alt=''/></p>
+                </true>
+                <false>
+                    {{ @AdminDomains_table_title }}
+                    <span>&#8943;</span><p class="tooltip-info tooltip" title="{{ @AdminDomains_table_title_tooltip }}"><include href="images/icons/information.svg" alt=''/></p>
+                </false>
+            </check>
+        </div>
+    </header>
+
+    <div class="card-table">
+        <div class="content">
+            <check if="false !== strpos(@CURRENT_PATH, 'domain') && ( !isset(@innerDomains) || 1 !== @innerDomains)">
+                <true>
+                <include href="templates/parts/forms/searchForm.html" />
+                </true>
+            </check>
+            <table class="table" id="domains-table">
+                <thead>
+                    <tr>
+                        <th class="tooltip domain-col" title="{{ @Base_table_column_domain_tooltip }}">{{ @Base_table_column_domain }}</th>
+                        <th class="tooltip yes-no-col" title="{{ @Base_table_column_free_email_provider_tooltip }}">{{ @Base_table_column_free_email_provider }}</th>
+                        <th class="tooltip domain-rating-col" title="{{ @Base_table_column_tranco_rank_tooltip }}">{{ @Base_table_column_tranco_rank }}</th>
+                        <th class="tooltip yes-no-col" title="{{ @Base_table_column_unavailable_tooltip }}">{{ @Base_table_column_unavailable }}</th>
+                        <th class="tooltip yes-no-col" title="{{ @Base_table_column_disposable_tooltip }}">{{ @Base_table_column_disposable }}</th>
+                        <th class="tooltip date-col" title="{{ @Base_table_column_domain_registered_tooltip }}">{{ @Base_table_column_domain_registered }}</th>
+                        <th class="tooltip domains-total-counters-col" title="{{ @Base_table_column_total_users_tooltip_domains }}">{{ @Base_table_column_total_users }}</th>
+                        <th class="tooltip domains-total-counters-col" title="{{ @Base_table_column_total_fraud_users_tooltip }}">{{ @Base_table_column_total_fraud_users }}</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>

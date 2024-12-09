@@ -1,0 +1,23 @@
+<include href="templates/parts/headerAdmin.html" />
+<div id="wrap">
+    <include href="templates/parts/panel/eventPanel.html" />
+    <include href="templates/parts/leftMenu.html" />
+    <div class="main">
+        <include href="templates/parts/forms/globalSearchForm.html" />
+        <include href="templates/parts/systemNotification.html" />
+        <include href="templates/parts/welcomeMessage.html" />
+        <include href="templates/parts/notification.html" />
+
+{***
+        <include href="templates/parts/infoHeader.html" with="title={{@BOT.id}}, lastseen={{@BOT.lastseen ?? null}}, subtitle={{@BOT.ua}}, type=ua, id={{@BOT.id}}, dataIncomplete={{!@BOT.checked && @IS_ENRICHABLE}}"/>
+***}
+        <include href="templates/parts/infoHeader.html" with="title={{@BOT.id}}, lastseen={{@BOT.lastseen ?? null}}, subtitle={{@BOT.ua}}"/>
+
+        <include href="templates/parts/widgets/bot.html" />
+        <include href="templates/parts/tables/users.html" />
+        <include href="templates/parts/mapWithIps.html" />
+
+        <include href="templates/parts/tables/events.html" with="showChart=1"/>
+    </div>
+<include href="templates/parts/footerAdmin.html" />
+</div>

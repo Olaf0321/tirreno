@@ -1,0 +1,34 @@
+<div class="card events-card">
+    <header class="card-header">
+        <div class="card-header-title">
+            {{ @AdminIps_map_title }}
+            <span>&#8943;</span><p class="tooltip-info tooltip" title="{{ @AdminIps_map_title_tooltip }}"><include href="images/icons/information.svg" alt=''/>
+            </p>
+        </div>
+    </header>
+
+    <div class="main-graph">
+        <div id="world-map-markers"></div>
+    </div>
+
+    <div class="card-table">
+        <div class="content">
+            <table class="table" id="ips-table">
+                <thead>
+                    <tr>
+                        <th class="tooltip ip-col" title="{{ @Base_table_column_ip_tooltip }}">{{ @Base_table_column_ip }}</th>
+                        <th class="tooltip country-full-name-col" title="{{ @Base_table_column_ip_country_tooltip }}">{{ @Base_table_column_country }}</th>
+                        <th class="tooltip asn-col" title="{{ @Base_table_column_asn_tooltip }}">{{ @Base_table_column_asn }}</th>
+                        <th class="tooltip ip-netname-col" title="{{ @Base_table_column_netname_tooltip }}">{{ @Base_table_column_netname }}</th>
+                        <th class="tooltip ip-type-col" title="{{ @Base_table_column_ip_type_tooltip }}">{{ @Base_table_column_ip_type }}</th>
+                        <th class="tooltip ip-total-counters-col" title="{{ @Base_table_column_total_actions_tooltip_ips }}">{{ @Base_table_column_total_actions }}</th>
+                        <th class="tooltip ip-total-counters-col" title="{{ @Base_table_column_total_users_tooltip_ips }}">{{ @Base_table_column_total_users }}</th>
+                        {***<!-- TODO: return alert_list back in next release -->
+                        <!-- <th class="tooltip yes-no-col" title="{{ @Base_table_column_global_alert_tooltip }}">{{ @Base_table_column_global_alert }}</th> -->***}
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+
+</div>

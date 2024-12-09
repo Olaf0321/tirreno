@@ -1,0 +1,13 @@
+Options -Indexes
+RewriteEngine On
+
+RewriteRule ^(\..+|Dockerfile|app|config|logs|db|tmp|vendor|libs|sensor/src|sensor/tests|.+\.sh|.+\.yml|.+\.conf|.+\.ini|.+\.log|.+\.sql|.+\.json|composer\.lock|phpcs\.xml)$ - [R=404,L]
+
+# Exclude /sensor path from general rules
+RewriteRule ^sensor(?:\/.*)?$ /sensor/ [L,QSA]
+
+RewriteCond %{REQUEST_FILENAME} !-l
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule .* index.php [L,QSA]
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization},L]

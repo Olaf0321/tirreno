@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<ruleset name="CustomCodingStandard">
+    <description>Custom coding standards.</description>
+
+    <file>app/</file>
+    <file>sensor/</file>
+    <file>install/</file>
+    <exclude-pattern>vendor/</exclude-pattern>
+    <exclude-pattern>sensor/vendor/</exclude-pattern>
+
+    <!-- Extend a base coding standard, such as PSR12 -->
+    <rule ref="PSR12"/>
+
+    <!-- Disallow Yoda conditions -->
+    <rule ref="Generic.ControlStructures.DisallowYodaConditions"/>
+
+    <!-- Enforce brace placement for function declarations -->
+    <rule ref="PSR12">
+        <exclude name="Squiz.Functions.MultiLineFunctionDeclaration.BraceOnSameLine" />
+    </rule>
+    <rule ref="Generic.Functions.OpeningFunctionBraceKernighanRitchie"/>
+
+    <!-- Enforce brace placement for class declarations -->
+    <rule ref="PSR12">
+        <exclude name="PSR2.Classes.ClassDeclaration.OpenBraceNewLine" />
+    </rule>    
+    <rule ref="Generic.Classes.OpeningBraceSameLine"/>
+
+    <!-- Prevent alignment sniffs from flagging aligned code -->
+    <rule ref="PSR12">
+        <exclude name="Generic.Files.LineLength.TooLong"/>
+    </rule>
+
+    <!-- Enforce camelCase for local variables -->
+    <rule ref="Squiz.NamingConventions.ValidFunctionName"/>
+    <rule ref="Squiz.NamingConventions.ValidVariableName"/>
+
+    <rule ref="PSR12">
+        <exclude name="Squiz.NamingConventions.ValidVariableName.PublicHasUnderscore"/>
+        <exclude name="Squiz.NamingConventions.ValidVariableName.PrivateNoUnderscore"/>
+        <exclude name="Squiz.NamingConventions.ValidFunctionName.PublicHasUnderscor"/>
+        <exclude name="Squiz.NamingConventions.ValidFunctionName.PrivateNoUnderscore"/>
+        <exclude name="Squiz.NamingConventions.ValidVariableName.MemberNotCamelCaps"/>
+        <exclude name="Generic.NamingConventions.UpperCaseConstantName.ClassConstantNotUpperCase"/>
+    </rule>
+
+    <!-- Name php, js and html files in CamelCase -->
+
+</ruleset>
