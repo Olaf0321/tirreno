@@ -1,17 +1,20 @@
-*Know Your User: Open source user analytics for sovereign cybersecurity.*
+# Tirreno
 
 <p align="center">
     <a href="https://www.tirreno.com/" target="_blank">
         <img src="https://www.tirreno.com/double-screen.jpg" alt="Tirreno screenshot" />
     </a>
 </p>
----
 
-Tirreno is a open-source user analytics.
+Tirreno is an open-source user analytics.
 
-Tirreno is a universal security tool designed to protect online platforms, SaaS applications, online communities, intranets, IoT, e-commerce websites, and internal web portals from various threats related to user activity. It is effective against external threats associated with partners or customers, as well as internal risks posed by employees or suppliers.
+Tirreno is a universal analytic tool for protection of online platforms, SaaS applications, online communities, web-applications, intranets, IoT, e-commerce websites, and internal web portals from various threats related to user activity. It is effective against external threats associated with partners or customers, as well as internal risks posed by employees or suppliers.
 
 Tirreno is a "low-tech" PHP and PostgreSQL software application that can be downloaded and installed on your own web server. After a straightforward five-minute installation process, you can immediately access real-time analytics.
+
+## Online demo
+
+Check out the online demo at [play.tirreno.com](https://play.tirreno.com) (admin/tirreno).
 
 ## Requirements
 
@@ -38,6 +41,11 @@ If you prefer Apache web server, `mod_rewrite` and `mod_headers` should be enabl
 ```
 */10 * * * * cd /path/to/tirreno && /usr/bin/php /path/to/tirreno/index.php /cron >> /path/to/tirreno/logs/error.log 2>&1
 ```
+
+## User guide
+
+Please see the [Tirreno Docs](https://docs.tirreno.com/).
+
 
 ## Optional non-free capabilities
 
