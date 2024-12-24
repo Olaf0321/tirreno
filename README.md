@@ -8,7 +8,14 @@
 
 Tirreno is an open-source user analytics.
 
-Tirreno is a universal analytic tool for protection of online platforms, SaaS applications, online communities, web-applications, intranets, IoT, e-commerce websites, and internal web portals from various threats related to user activity. It is effective against external threats associated with partners or customers, as well as internal risks posed by employees or suppliers.
+Tirreno is a universal analytic tool for the monitoring of online platforms, web applications, SaaS, communities, IoT, mobile applications, intranets and e-commerce websites. It is effective against external threats associated with partners or customers, as well as internal risks posed by employees or suppliers.
+
+* **For Website Owners**: Protect your user areas from account takeovers, malicious bots, and common web vulnerabilities caused by user behavior.
+* **For Online Communities**: Combat spam, prevent fake registrations, and stop re-registration from the same IP addresses.
+* **For Startups, SaaS, and E-commerce**: Get a ready-made boilerplate for client security, including monitoring customer activity for suspicious behavior and fraud prevention based on advanced email, IP, and phone reputation checks.
+* **For Platforms**: Conduct thorough merchant risk assessments to identify and mitigate potential threats from high-risk merchants, ensuring the integrity of your platform.
+* **For IoT Security**: Enhance the security of your IoT ecosystem by tracking user activity and identifying potential vulnerabilities.
+* **For CISOs and Security Teams**: Monitor employee accounts and secure critical enterprise applications like Mattermost™, GitLab™, CRM, or intranets. Identify unusual activity patterns or unauthorized access attempts.
 
 Tirreno is a "low-tech" PHP and PostgreSQL software application that can be downloaded and installed on your own web server. After a straightforward five-minute installation process, you can immediately access real-time analytics.
 
@@ -20,7 +27,7 @@ Check out the online demo at [play.tirreno.com](https://play.tirreno.com) (admin
 
 * **PHP**: Version 8.0 to 8.3
 * **PostgreSQL**: Version 12 or greater
-* **PHP Extensions**: `PDO_PGSQL`
+* **PHP Extensions**: `PDO_PGSQL`, `cURL`
 * **HTTP Web Server**: Any, configured to work with PHP
 * **Operating System**: A Unix-like system is recommended
 * **Minimum Hardware Requirements**:
@@ -32,11 +39,11 @@ If you prefer Apache web server, `mod_rewrite` and `mod_headers` should be enabl
 
 ## Install instruction
 
-1. [Download](https://www.tirreno.com/download.php) latest version of tirreno (ZIP file).
+1. [Download](https://www.tirreno.com/download.php) the latest version of Tirreno (ZIP file).
 2. Extract the tirreno-master.zip file to the location where you want it installed on your web server.
-3. Navigate to `http://your-domain.example/install/index.php` in browser to launch installation process.
+3. Navigate to `http://your-domain.example/install/index.php` in a browser to launch the installation process.
 4. After the successful installation, delete the `install/` directory and its contents.
-5. Navigate to `http://your-domain.example/signup/` in browser to create administratior account.
+5. Navigate to `http://your-domain.example/signup/` in a browser to create administrator account.
 6. For cron jobs setup insert the following schedule (every 10 minutes) expression with `crontab -e` command or by editing `/var/spool/cron/your-web-server` file:
 ```
 */10 * * * * cd /path/to/tirreno && /usr/bin/php /path/to/tirreno/index.php /cron >> /path/to/tirreno/logs/error.log 2>&1
@@ -51,7 +58,7 @@ Please see the [Tirreno Docs](https://docs.tirreno.com/).
 
 The open-sourced Tirreno code is intended to be used for free as a standalone application. It provides general statistics and an extended audit log of user requests to a monitored system. As is, this tooling may be sufficient for bringing insights about user activity and behavioral patterns in a wide range of use cases, especially as a solution for small and medium-sized organizations.
 
-However, if you are looking to cover more advanced usage scenarios as frud prevention, the additional Tirreno API enrichment capabilities can be enabled via [monthly-paid subscription](https://www.tirreno.com/pricing/).
+However, if you are looking to cover more advanced usage scenarios, such as fraud prevention, the additional Tirreno API enrichment capabilities can be enabled via [monthly-paid subscription](https://www.tirreno.com/pricing/).
 
 ### Enrichment API
 
@@ -75,7 +82,7 @@ History suggests the Tyrrhenian people may have lived in Tuscany and eastern Swi
 
 While working on the logo, we conducted our own historical study and traced mentions of 'tirreno' back to the 15th-century printed edition of the Vulgate (the Latin Bible). We kept it lowercase to stay true to the original — quite literally, by the book.
 
-Finally, the "Tirreno" wordmark is cropped at the bottom, creating a horizon line that symbolizes the continuous development cycle of cybersecurity software.
+Finally, the 'tirreno' wordmark is cropped at the bottom, creating a horizon line that symbolises the continuous development cycle of cybersecurity software.
 
 ## Reporting a security issue
 
