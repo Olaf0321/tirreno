@@ -6,16 +6,16 @@
     </a>
 </p>
 
-Tirreno is an open-source user analytics.
+Tirreno is open-source user analytics software.
 
-Tirreno is a universal analytic tool for the monitoring of online platforms, web applications, SaaS, communities, IoT, mobile applications, intranets and e-commerce websites. It is effective against external threats associated with partners or customers, as well as internal risks posed by employees or suppliers.
+Tirreno is a universal analytic tool for monitoring online platforms, web applications, SaaS, communities, IoT, mobile applications, intranets, and e-commerce websites. It is effective against external threats associated with partners or customers, as well as internal risks posed by employees or suppliers.
 
 * **For Website Owners**: Protect your user areas from account takeovers, malicious bots, and common web vulnerabilities caused by user behavior.
 * **For Online Communities**: Combat spam, prevent fake registrations, and stop re-registration from the same IP addresses.
-* **For Startups, SaaS, and E-commerce**: Get a ready-made boilerplate for client security, including monitoring customer activity for suspicious behavior and fraud prevention based on advanced email, IP, and phone reputation checks.
+* **For Startups, SaaS, and E-commerce**: Get a ready-made boilerplate for client security, including monitoring customer activity for suspicious behavior and preventing fraud using advanced email, IP address, and phone reputation checks.
 * **For Platforms**: Conduct thorough merchant risk assessments to identify and mitigate potential threats from high-risk merchants, ensuring the integrity of your platform.
 * **For IoT Security**: Enhance the security of your IoT ecosystem by tracking user activity and identifying potential vulnerabilities.
-* **For CISOs and Security Teams**: Monitor employee accounts and secure critical enterprise applications like Mattermost™, GitLab™, CRM, or intranets. Identify unusual activity patterns or unauthorized access attempts.
+* **For CISOs and Security Teams**: Monitor employee accounts and secure critical enterprise applications like Mattermost™, GitLab™, CRMs, or intranets. Identify unusual activity patterns or unauthorized access attempts.
 
 Tirreno is a "low-tech" PHP and PostgreSQL software application that can be downloaded and installed on your own web server. After a straightforward five-minute installation process, you can immediately access real-time analytics.
 
@@ -37,7 +37,7 @@ Check out the online demo at [play.tirreno.com](https://play.tirreno.com) (admin
 
 If you prefer Apache web server, `mod_rewrite` and `mod_headers` should be enabled.
 
-## Install instruction
+## Installation instructions
 
 1. [Download](https://www.tirreno.com/download.php) the latest version of Tirreno (ZIP file).
 2. Extract the tirreno-master.zip file to the location where you want it installed on your web server.
@@ -49,24 +49,15 @@ If you prefer Apache web server, `mod_rewrite` and `mod_headers` should be enabl
 */10 * * * * cd /path/to/tirreno && /usr/bin/php /path/to/tirreno/index.php /cron >> /path/to/tirreno/logs/error.log 2>&1
 ```
 
-## User guide
+## Documentation
 
-Please see the [Tirreno Docs](https://docs.tirreno.com/).
-
+See the [User Guide](https://docs.tirreno.com/) for details on how to use Tirreno.
 
 ## Optional non-free capabilities
 
 The open-sourced Tirreno code is intended to be used for free as a standalone application. It provides general statistics and an extended audit log of user requests to a monitored system. As is, this tooling may be sufficient for bringing insights about user activity and behavioral patterns in a wide range of use cases, especially as a solution for small and medium-sized organizations.
 
-However, if you are looking to cover more advanced usage scenarios, such as fraud prevention, the additional Tirreno API enrichment capabilities can be enabled via [monthly-paid subscription](https://www.tirreno.com/pricing/).
-
-### Enrichment API
-
-As the solution we built has proved to be efficient in guarding our platform, over time we have implemented a data enrichment API. The goal was to provide our partners and clients with ethical means in their struggle against malicious actors.
-
-We have built the Tirreno API in-house, eliminating the need to share information with third parties. It operates without collecting or storing user data.
-
-Along with making Tirreno's code publicly available, we provide access to this API on a monthly subscription basis. Depending on the subscription plan, it supplies extended information on any of the following: IP address, email address, domain, and phone number. Enabling all the data enrichment types augments Tirreno into a fully-fledged enterprise solution for an online fraud prevention system.
+However, if you are looking to cover more advanced usage scenarios, such as fraud prevention, the additional Tirreno API enrichment capabilities can be enabled via [monthly-paid subscription](https://www.tirreno.com/pricing/). Depending on the subscription plan, it supplies extended information on any of the following: IP address, email address, domain, and phone number. Enabling all the data enrichment types augments Tirreno into a fully-fledged enterprise solution for an online fraud prevention system.
 
 ## Background
 
@@ -74,7 +65,15 @@ The business behind this platform is Tirreno Technologies Sàrl, operated in Vau
 
 The idea for Tirreno arose from a challenge: an online platform was in need of a fraud prevention tool. We were looking for a product that could work on-premises and would not share user data with third-party vendors. Since the available solutions did not meet all our requirements, we created our own tool.
 
-While building Tirreno, we concentrated on privacy, trust, and true sovereignty. As a result, we have built Tirreno in a secure and independent manner. The application does not have a long list of development dependencies, nor does it rely on heavy frameworks. This approach minimizes the potential attack surface.
+While building Tirreno, we concentrated on **privacy**, **trust**, and true **sovereignty**. As a result, we have built Tirreno in a secure and independent manner. The application does not have a long list of development dependencies, nor does it rely on heavy frameworks. This approach minimizes the potential attack surface.
+
+### Enrichment API
+
+As the solution we built has proved to be efficient in guarding our platform, over time we have implemented a data enrichment API. The goal was to provide our partners and clients with ethical means in their struggle against malicious actors.
+
+We have built the Tirreno API in-house, eliminating the need to share information with third parties. It operates without collecting or storing user data.
+
+Along with making Tirreno's code publicly available, we provide access to this API on a [monthly subscription](https://www.tirreno.com/pricing/) basis.
 
 ### Why the name Tirreno?
 
