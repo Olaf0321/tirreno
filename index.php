@@ -15,6 +15,15 @@
 
 session_name('CONSOLESESSION');
 
+/*
+    * Load the autoloader
+    * If the vendor directory exists, use Composer's autoloader.
+    * Otherwise, fall back to a custom autoloader for legacy libraries.
+    * This allows the application to run without Composer dependencies if needed.
+    */
+if (!defined('TIRRENO_ROOT')) {
+    define('TIRRENO_ROOT', __DIR__ . '/');
+}
 
 if (file_exists(__DIR__ . '/vendor/autoload.php')) {
     require __DIR__ . '/vendor/autoload.php';
